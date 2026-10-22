@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://codcs2gsurck2"]
+
+[ext_resource type="PackedScene" uid="uid://ddvhhhgsn1cbb" path="res://player.tscn" id="1_ig7tw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dm0k"]
+
+[sub_resource type="Environment" id="Environment_7dm0k"]
+ambient_light_source = 3
+ambient_light_color = Color(0.7565128, 0.87096673, 0.98887485, 1)
+
+[node name="Main" type="Node3D" unique_id=25003189]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=356866229]
+use_collision = true
+size = Vector3(100, 0.1, 100)
+material = SubResource("StandardMaterial3D_7dm0k")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1895773660]
+environment = SubResource("Environment_7dm0k")
+
+[node name="Player" parent="." unique_id=313194366 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.487339, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1544664765]
+transform = Transform3D(0.04874522, 0, -0.99881124, 0, 1, 0, 0.99881124, 0, 0.04874522, -6.733287, 5.9833603, 0)
+visible = false
