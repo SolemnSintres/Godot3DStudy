@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 const gravity = 9.8
 const SPEED = 4.0
-const MOUSE_SENSITIVITY = 0.002
+const MOUSE_SENSITIVITY = 0.01
 
 @onready var head = $CollisionShape3D/Head 
 

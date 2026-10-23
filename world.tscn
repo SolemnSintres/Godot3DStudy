@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://ddvhhhgsn1cbb" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c46ckiycm7w0c" path="res://world.gd" id="1_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://cimxuekct26ib" path="res://tree.tscn" id="2_fj7yv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gv5m4"]
 
@@ -31,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 0.0026004612, 0.99999666, 0, -0.99999666, 0.
 light_energy = 0.525
 
 [node name="Player" parent="." unique_id=313194366 instance=ExtResource("1_f3sb7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12619972, 1.2355709, 4.189402)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1262, 1.2355709, -6.810598)
 
 [node name="House" type="CSGBox3D" parent="." unique_id=1473746256]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4765358, 1.9992771, 0)
@@ -50,12 +49,3 @@ size = Vector3(2, 3, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1916217198]
 environment = SubResource("Environment_f3sb7")
-
-[node name="Tree" parent="." unique_id=1029624678 instance=ExtResource("2_fj7yv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.459095, 1.5499992, 8.734795)
-
-[node name="Tree2" parent="." unique_id=1769245445 instance=ExtResource("2_fj7yv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.615562, 1.5499992, 4.069704)
-
-[node name="Tree3" parent="." unique_id=1942447730 instance=ExtResource("2_fj7yv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4061413, 1.5499992, -12.828503)
