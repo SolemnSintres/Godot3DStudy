@@ -9,12 +9,14 @@ albedo_color = Color(0.06666667, 0.5058824, 0, 1)
 [node name="Tree" type="Node3D" unique_id=1029624678]
 
 [node name="Trunk" type="CSGCylinder3D" parent="." unique_id=1872079801]
+use_collision = true
 radius = 0.25
 height = 3.0
 material = SubResource("StandardMaterial3D_uc1xx")
 
 [node name="Leaves" type="CSGCylinder3D" parent="." unique_id=1774026973]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7275887, 0)
+use_collision = true
 radius = 1.5
 height = 3.0
 cone = true

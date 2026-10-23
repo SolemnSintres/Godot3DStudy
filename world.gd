@@ -7,10 +7,11 @@ var found = 0
 func _ready() -> void:
 	while(found < 30):
 		var x = randf_range(-40,40)
-		var y = randf_range(-40,40)
+		var y = randf_range(-0.5,1)
+		var z = randf_range(-40,40)
 		if abs(x) < 8.0 and abs(y) < 6.0:
 			continue
 		var tree = TREE.instantiate()
-		tree.position = Vector3(x,0,y)
+		tree.position = Vector3(x,y,z)
 		add_child(tree)
 		found += 1

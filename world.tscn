@@ -4,22 +4,26 @@
 [ext_resource type="Script" uid="uid://c46ckiycm7w0c" path="res://world.gd" id="1_tlwt5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gv5m4"]
+albedo_color = Color(0, 0.2175481, 1.2032687e-07, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
-sky_top_color = Color(0.14438334, 0.474019, 0.69385177, 1)
-sky_horizon_color = Color(0.5189429, 0.6778895, 0.7911048, 1)
-ground_bottom_color = Color(0.359486, 0.23989442, 0.15112844, 1)
+sky_top_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+sky_energy_multiplier = 0.1
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Sky" id="Sky_fj7yv"]
 sky_material = SubResource("ProceduralSkyMaterial_f3sb7")
 
 [sub_resource type="Environment" id="Environment_f3sb7"]
 background_mode = 2
+background_energy_multiplier = 0.7
 sky = SubResource("Sky_fj7yv")
 fog_enabled = true
-fog_light_color = Color(0.79607844, 0.8627451, 0.8901961, 1)
-fog_light_energy = 0.2
-fog_density = 0.1
+fog_light_color = Color(0.12606615, 0.16390818, 0.22383267, 1)
+fog_light_energy = 0.05
+fog_density = 0.5
 fog_aerial_perspective = 0.1
 
 [node name="World" type="Node3D" unique_id=1466041384]
@@ -30,9 +34,11 @@ use_collision = true
 size = Vector3(100, 0.1, 100)
 material = SubResource("StandardMaterial3D_gv5m4")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1873360212]
-transform = Transform3D(1, 0, 0, 0, 0.0026004612, 0.99999666, 0, -0.99999666, 0.0026004612, 0, 45.011044, 0)
-light_energy = 0.525
+[node name="Moon" type="DirectionalLight3D" parent="." unique_id=1873360212]
+transform = Transform3D(0.79004806, -0.0015941996, -0.6130429, 0.613045, 0.0020544892, 0.7900454, 0, -0.99999666, 0.002600461, -32.12146, 58.96749, 0)
+light_color = Color(0.003451745, 0, 0.655912, 1)
+light_energy = 0.1
+light_indirect_energy = 12.881
 
 [node name="Player" parent="." unique_id=313194366 instance=ExtResource("1_f3sb7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1262, 1.2355709, -6.810598)
