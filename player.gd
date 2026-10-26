@@ -4,7 +4,8 @@ const gravity = 9.8
 const SPEED = 4.0
 const MOUSE_SENSITIVITY = 0.002
 
-@onready var head = $CollisionShape3D/Head 
+@onready var head = $CollisionShape3D/Head
+@onready var flash = $CollisionShape3D/Head/Flashlight 
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
