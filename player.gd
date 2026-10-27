@@ -9,6 +9,7 @@ const MOUSE_SENSITIVITY = 0.002
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	flash.visible = false
 
 func _physics_process(delta):
 	
@@ -30,3 +31,5 @@ func _unhandled_input(event):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if event is InputEventMouseButton:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if event.is_action_pressed("flashlight"):
+		flash.visible = not flash.visible
