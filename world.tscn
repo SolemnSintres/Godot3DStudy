@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ddvhhhgsn1cbb" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c46ckiycm7w0c" path="res://world.gd" id="1_tlwt5"]
+[ext_resource type="AudioStream" uid="uid://beyycymxttoqu" path="res://Wind.wav" id="3_tlwt5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gv5m4"]
 albedo_color = Color(0, 0.2175481, 1.2032687e-07, 1)
@@ -60,3 +61,8 @@ size = Vector3(2, 3, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1916217198]
 environment = SubResource("Environment_f3sb7")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1904568535]
+stream = ExtResource("3_tlwt5")
+volume_db = -5.0
+autoplay = true
