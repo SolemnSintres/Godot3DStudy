@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dxi6wtyxskgce" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://ysc7sgd6ws5c" path="res://spot_light_3d.gd" id="2_onrkg"]
+[ext_resource type="AudioStream" uid="uid://ceijxbyk8jd4i" path="res://footstep.wav" id="3_i3pqv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4flbx"]
 
@@ -27,3 +28,8 @@ light_size = 1.0
 spot_range = 10.0
 spot_angle = 50.0
 script = ExtResource("2_onrkg")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=572456424]
+stream = ExtResource("3_i3pqv")
+volume_db = -20.0
+max_db = -3.0

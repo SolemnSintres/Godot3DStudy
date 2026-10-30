@@ -6,6 +6,7 @@ const MOUSE_SENSITIVITY = 0.002
 
 @onready var head = $CollisionShape3D/Head
 @onready var flash = $CollisionShape3D/Head/Flashlight 
+@onready var footstep = $AudioStreamPlayer3D
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -21,6 +22,13 @@ func _physics_process(delta):
 	velocity.z = direction.z * SPEED
 	
 	move_and_slide()
+	
+	var speed = Vector2(velocity.x,velocity.y).length()
+	
+	if is_on_floor() and speed > 0.1 and speed < 5:
+		if not footstep.playing:
+			footstep.volume_db = randf_range(-6.0,0.0)
+			footstep.play()
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
