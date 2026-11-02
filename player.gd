@@ -8,6 +8,7 @@ const MOUSE_SENSITIVITY = 0.002
 @onready var flash = $CollisionShape3D/Head/Flashlight 
 @onready var footstep = $AudioStreamPlayer3D
 @onready var sight = $CollisionShape3D/Head/RayCast3D
+@onready var hint = $CanvasLayer/Label
 
 
 func _ready():
@@ -15,7 +16,6 @@ func _ready():
 	flash.visible = false
 
 func _physics_process(delta):
-	
 	if !(is_on_floor()):
 		velocity.y -= gravity * delta
 	var moveit = Input.get_vector("move_left","move_right","move_forward","move_back")
@@ -25,6 +25,15 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
+	if sight.is_colliding():
+		var inter = sight.get_collider()
+		var insight = inter.get_parent()
+		if insight.has_method("toggle"):
+			hint.visible = true
+	else:
+		hint.visible = false
+
+
 	var speed = Vector2(velocity.x,velocity.y).length()
 	
 	if is_on_floor() and speed > 0.1 and speed < 5:
@@ -43,10 +52,10 @@ func _unhandled_input(event):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if event.is_action_pressed("flashlight"):
 		flash.visible = not flash.visible
-	
 	if event.is_action_pressed("interact"):
 		var inter = sight.get_collider()
 		if sight.is_colliding():
 			var insight = inter.get_parent()
 			if insight.has_method("toggle"):
 				insight.toggle()
+	
