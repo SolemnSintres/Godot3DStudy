@@ -9,9 +9,20 @@ func _ready() -> void:
 		var x = randf_range(-40,40)
 		var y = randf_range(-0.5,1)
 		var z = randf_range(-40,40)
-		if abs(x) < 8.0 and abs(y) < 6.0:
+		if abs(x) < 8.0 and abs(z) < 6.0:
 			continue
 		var tree = TREE.instantiate()
 		tree.position = Vector3(x,y,z)
 		add_child(tree)
 		found += 1
+		
+	for i in range(-50,51,5):
+		treemaker(i,50)
+		treemaker(i,-50)
+		treemaker(-50,i)
+		treemaker(50,i)
+
+func treemaker(x,z):
+	var tree = TREE.instantiate()
+	tree.position = Vector3(x,0,z)
+	add_child(tree)
