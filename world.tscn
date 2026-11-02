@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ddvhhhgsn1cbb" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c46ckiycm7w0c" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="AudioStream" uid="uid://beyycymxttoqu" path="res://Wind.wav" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://ctgg2vdg6gdyh" path="res://door.tscn" id="4_aqk2v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gv5m4"]
 albedo_color = Color(0, 0.2175481, 1.2032687e-07, 1)
@@ -23,11 +24,11 @@ material = SubResource("StandardMaterial3D_gv5m4")
 
 [node name="Moon" type="DirectionalLight3D" parent="." unique_id=1873360212]
 transform = Transform3D(0.79004806, -0.0015941996, -0.6130429, 0.613045, 0.0020544892, 0.7900454, 0, -0.99999666, 0.002600461, -32.12146, 58.96749, 0)
-light_energy = 2.11
+light_energy = 4.0
 light_indirect_energy = 12.881
 
 [node name="Player" parent="." unique_id=313194366 instance=ExtResource("1_f3sb7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.349922, 1.2355709, -2.2643867)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9693174, 1.2355709, 6.7333617)
 
 [node name="House" type="CSGBox3D" parent="." unique_id=1473746256]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4765358, 1.9992771, 0)
@@ -78,3 +79,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -49.41914)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InWall4" unique_id=224662227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4879837, 0)
 shape = SubResource("BoxShape3D_aqk2v")
+
+[node name="Door" parent="." unique_id=1706304728 instance=ExtResource("4_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9761305, 0.04558873, 2.8559384)

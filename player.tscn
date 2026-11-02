@@ -29,6 +29,10 @@ spot_range = 10.0
 spot_angle = 50.0
 script = ExtResource("2_onrkg")
 
+[node name="RayCast3D" type="RayCast3D" parent="CollisionShape3D/Head" unique_id=1507747349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01258409, -0.116141856)
+target_position = Vector3(0, 0, -2)
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=572456424]
 stream = ExtResource("3_i3pqv")
 volume_db = -20.0

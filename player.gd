@@ -7,6 +7,7 @@ const MOUSE_SENSITIVITY = 0.002
 @onready var head = $CollisionShape3D/Head
 @onready var flash = $CollisionShape3D/Head/Flashlight 
 @onready var footstep = $AudioStreamPlayer3D
+@onready var sight = $CollisionShape3D/Head/RayCast3D
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -41,3 +42,6 @@ func _unhandled_input(event):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if event.is_action_pressed("flashlight"):
 		flash.visible = not flash.visible
+	if event.is_action_pressed("interact"):
+		if sight.is_colliding():
+			print(sight.get_collider().name)
